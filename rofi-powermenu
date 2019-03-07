@@ -1,0 +1,30 @@
+#!/bin/bash
+
+_rofi() {
+  rofi -sep '|' -columns 6 -lines 1 -disable-history true -cycle true \
+    -width 80 -height 200 -xoffset 0 -yoffset 0 \
+    -dmenu -font "Hack 40"
+}
+
+choice=$(echo "Lock|Sleep|Suspend|Logout|Reboot|Shutdown" | _rofi)
+
+case "$choice" in
+  Lock)
+    lockscript
+    ;;
+  Sleep)
+    systemctl sleep
+    ;;
+  Suspend)
+    systemctl suspend
+    ;;
+  Logout)
+    bspc quit
+    ;;
+  Reboot)
+    systemctl reboot
+    ;;
+  Shutdown)
+    systemctl poweroff
+    ;;
+esac
