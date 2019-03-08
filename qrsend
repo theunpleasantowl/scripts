@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 genqr() {
 	mkdir -p /tmp/qrencode
@@ -9,8 +9,8 @@ genqr() {
 }
 
 notify_send() {
-	files=$(shuf -n1 -e /home/nep/Pictures/Gyate\ Gyate\ Kao/Gabriel\ Dropout/*)
-	notify-send --expire-time=2000 -i view-fullscreen "$msg" --icon="$files"  && sleep 0.5
+	icon=$(shuf -n1 -e /home/nep/Pictures/Gyate\ Gyate\ Kao/Gabriel\ Dropout/*)
+	notify-send --expire-time=2000 -i view-fullscreen "$msg" --icon="$icon"
 }
 
 main() {

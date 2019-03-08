@@ -1,12 +1,12 @@
-#!/bin/bash
+#!/bin/sh
 
 capture() {
-	cd ~/Pictures/Captures/ && scrot 'Neptop_%Y_%m_%d_%H-%M-%S_$wx$h.png' -q 100 "$1" -e 'xclip -selection clipboard -t image/png -i "$f"'
+	cd ~/Pictures/Captures/ && scrot 'Neptop_%Y_%m_%d_%H-%M-%S_$wx$h.png' -q 100 $1 -e 'xclip -selection clipboard -t image/png -i "$f"'
 }
 
 notify_send() {
-	files=$(shuf -n1 -e ~/Pictures/Gyate\ Gyate\ Kao/Gabriel\ Dropout/*)
-	notify-send --expire-time=2000 -i view-fullscreen 'Cheese!~' 'Saved to ~/Pictures/Captured' --icon="$files"  && sleep 0.5
+	icon=$(shuf -n1 -e ~/Pictures/Gyate\ Gyate\ Kao/Gabriel\ Dropout/*)
+	notify-send --expire-time=2000 -i view-fullscreen 'Cheese!~' 'Saved to ~/Pictures/Captured' --icon="$icon"
 }
 
 main() {

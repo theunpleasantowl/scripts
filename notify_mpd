@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Only run if mpd is running
 if [ $(pgrep -cx mpd) -eq 0 ] ; then
@@ -42,9 +42,9 @@ case $1 in
 	;;
 	'-t'|'--toggle')
 		mpc toggle
-		if [[ `state` == 'paused' ]]; then
+		if [ `state` = 'paused' ]; then
 			icon=⏸️
-		elif [[ `state` == 'playing' ]]; then
+		elif [ `state` = 'playing' ]; then
 			icon=▶️
 		fi
 	;;

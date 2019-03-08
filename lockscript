@@ -1,3 +1,4 @@
-#!/bin/bash
+#!/bin/sh
+# This file serves to set the lock mechanism in a unified manner
 
 i3lock-fancy

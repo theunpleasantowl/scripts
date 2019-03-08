@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
 printf "Current Locale is $LANG\n\n"
-
 
 echo "1 - Set Locale to ja_JP.UTF-8"
 echo "2 - Set Locale to en_US.UTF-8"
@@ -16,7 +15,7 @@ done
 
 echo "Would you like to log out now? [y/N]"
 read option
-if [[ "$option" =~ ^[Yy]+$ ]]; then
+if [ `echo $option | tr [:upper:] [:lower:]` = y ]; then
 	bspc quit
 else
 	echo "No Logout"
