@@ -1,7 +1,8 @@
 #!/bin/sh
 
 capture() {
-	cd ~/Pictures/Captures/ && scrot 'Neptop_%Y_%m_%d_%H-%M-%S_$wx$h.png' -q 100 $1 -e 'xclip -selection clipboard -t image/png -i "$f"'
+	mkdir -p ~/Pictures/Captures/
+	cd ~/Pictures/Captures/ && scrot 'Neptop_%Y_%m_%d_%H-%M-%S_$wx$h.png' -q 100 $1 -e 'xclip -se c -t image/png -i "$f"'
 }
 
 notify_send() {
