@@ -13,9 +13,11 @@ case "$choice" in
     lockscript
     ;;
   Sleep)
+    lockscript &
     systemctl sleep
     ;;
   Suspend)
+    lockscript &
     systemctl suspend
     ;;
   Logout)
