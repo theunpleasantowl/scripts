@@ -13,12 +13,10 @@ case "$choice" in
     lockscript
     ;;
   Sleep)
-    lockscript &
-    systemctl sleep
+    lockscript && systemctl sleep
     ;;
   Suspend)
-    lockscript &
-    systemctl suspend
+    lockscript && systemctl suspend
     ;;
   Logout)
     bspc quit
