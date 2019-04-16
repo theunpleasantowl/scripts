@@ -13,7 +13,7 @@ case "$choice" in
     lockscript
     ;;
   Sleep)
-    lockscript && systemctl sleep
+    lockscript && systemctl hibernate
     ;;
   Suspend)
     lockscript && systemctl suspend
