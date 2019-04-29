@@ -12,6 +12,10 @@ notify_send() {
 
 main() {
 	case "$1" in
+		window)
+			capture -u
+			notify_send
+			;;
 		crop)
 			capture -s
 			notify_send
