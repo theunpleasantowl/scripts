@@ -1,4 +1,4 @@
 #!/bin/sh
 
 find -L ~/Pictures/Wallpapers/ -maxdepth 2 -type f -iregex \
-'.*\(jpe?g\|bmp\|png\|gif\)$' -print0 | xargs -0 sxiv -t
+'.*\(jpe?g\|bmp\|png\|gif\)$' -print0 | xargs -0 sxiv -t -b
