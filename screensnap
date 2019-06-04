@@ -2,7 +2,8 @@
 
 capture() {
 	mkdir -p ~/Pictures/Captures/
-	cd ~/Pictures/Captures/ && scrot 'Neptop_%Y_%m_%d_%H-%M-%S_$wx$h.png' -q 100 $1 -e 'xclip -se c -t image/png -i "$f"'
+	filename=~/Pictures/Captures/Neptop_$(date +%Y_%m_%d_%N).png
+	maim $1 $filename -q 100 && xclip -selection clipboard -t image/png -i $filename
 }
 
 notify_send() {
@@ -13,7 +14,7 @@ notify_send() {
 main() {
 	case "$1" in
 		window)
-			capture -u
+			capture "-i $(xdotool getactivewindow)"
 			notify_send
 			;;
 		crop)
