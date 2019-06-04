@@ -2,8 +2,7 @@
 
 capture() {
 	mkdir -p ~/Pictures/Captures/
-	filename=~/Pictures/Captures/Neptop_$(date +%Y_%m_%d_%N).png
-	maim $1 $filename -q 100 && xclip -selection clipboard -t image/png -i $filename
+	maim $1 -m 10 | tee ~/Pictures/Captures/Neptop_$(date +%Y_%m_%d_%N).png | xclip -selection clipboard -t image/png
 }
 
 notify_send() {
